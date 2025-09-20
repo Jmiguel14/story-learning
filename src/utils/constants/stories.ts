@@ -12,7 +12,7 @@ export const STORIES = [
       "para los incrédulos.",
     ],
     wordsToCompleteWithSinonim: [
-      ["extraña", "misteriosa"],
+      ["misteriosa", "extraña"],
       ["ronquido", "gruñido"],
       ["atrevidos", "valientes"],
       ["caminó", "anduvo"],
