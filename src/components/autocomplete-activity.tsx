@@ -7,6 +7,7 @@ import ConfettiExplosion from "react-confetti-explosion";
 import Input from "./input";
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import { Button } from "@headlessui/react";
+import Badge from "./badge";
 
 const getInitialResult = (wordsLength: number) => {
   return Array.from({ length: wordsLength }, () => ({
@@ -29,7 +30,7 @@ export default function AutocompleteActivity() {
     const newResult = result.map((word, index) => {
       if (
         word.word.toLowerCase().trim() !==
-        story?.wordsToCompleteWithSinonim?.[index]?.[0].toLowerCase().trim()
+        story?.wordsToCompleteWithSinonim?.[index]?.[1].toLowerCase().trim()
       ) {
         const newWordSet = { ...word };
         newWordSet.error = true;
@@ -68,10 +69,15 @@ export default function AutocompleteActivity() {
           className="bg-blue-100 border-l-4 border-blue-500 text-blue-700 px-4 py-3 rounded"
           role="status"
         >
-          <span className="font-semibold">Información:</span> Autocompleta la
-          palabra basándote en el sinónimo que aparece entre paréntesis. Usa los
-          acentos de cada palabra.
+          <span className="font-semibold">Nota:</span> Usa la lista de sinónimos para completar el sinónimo de cada palabra en negrita.
         </div>
+      </div>
+      <div className="w-full my-4 flex flex-wrap gap-2 justify-center">
+        {
+          [...(story?.wordsToCompleteWithSinonim || [])].sort().map((pair, index) => (
+            <Badge key={index}>{pair[1]}</Badge>
+          ))
+        }
       </div>
       <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">
         {story?.title}
@@ -82,6 +88,9 @@ export default function AutocompleteActivity() {
             <span>{sentence} </span>
             {index !== story?.splittedDescription?.length - 1 && (
               <div className="inline-flex items-baseline gap-2 px-2">
+                <span className="inline-flex items-center font-bold">
+                  {story.wordsToCompleteWithSinonim?.[index]?.[0]}{" "}
+                </span>
                 <Input
                   type="text"
                   className="mx-1 w-32 inline-block align-baseline"
@@ -102,9 +111,6 @@ export default function AutocompleteActivity() {
                 ) : (
                   <CheckCircleIcon className="size-4 text-green-500" />
                 )}
-                <span className="inline-flex items-center text-gray-400">
-                  ({story.wordsToCompleteWithSinonim?.[index]?.[1]}){" "}
-                </span>
               </div>
             )}
           </span>
