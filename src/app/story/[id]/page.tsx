@@ -24,11 +24,14 @@ export default function StoryPage() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] px-4">
+    <div
+      className="flex flex-col items-center justify-center h-screen px-4 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${currentStory.image})` }}
+    >
       <Link href="/" className="self-start">
         <Button
           type="button"
-          className="cursor-pointer my-4 px-4 py-2 bg-transparent text-gray-500 rounded hover:text-gray-700 border border-gray-500 transition-colors"
+          className="cursor-pointer my-4 px-4 py-2 bg-transparent text-white rounded hover:text-gray-500 border border-white transition-colors hover:animate-pulse"
         >
           <ArrowLeftIcon className="size-4" />
         </Button>
@@ -63,6 +66,14 @@ export default function StoryPage() {
               </Button>
             </Link>
           )}
+          <Link href={`/activity/sort-word?storyId=${id}`}>
+            <Button
+              type="button"
+              className="cursor-pointer w-full mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors"
+            >
+              Ordenar palabras
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

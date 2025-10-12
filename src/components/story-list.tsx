@@ -13,6 +13,7 @@ export default function StoryList() {
           <h2 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
             {story.title}
           </h2>
+          <img src={story.image} alt={story.title} className="w-full h-48 object-cover rounded-md mb-4" />
           <p
             className="text-gray-700 dark:text-gray-300 overflow-hidden text-ellipsis line-clamp-2"
             title={story.description}

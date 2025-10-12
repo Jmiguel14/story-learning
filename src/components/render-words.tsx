@@ -15,7 +15,7 @@ export default function RenderWords ({items, id, strategy = verticalListSortingS
   const { setNodeRef } = useDroppable({ id });
   return (
     <div
-      className={`flex justify-center ${orientation === "vertical" ? 'flex-col' : 'flex-row'} gap-4 ${withBorder ? 'border-2 border-gray-300 dark:border-white rounded-md p-4 min-w-48 min-h-12' : ''}`}
+      className={`flex justify-center ${orientation === "vertical" ? 'flex-col' : 'flex-row'} gap-4 ${withBorder ? 'border-2 border-gray-300 dark:border-white rounded-4xl p-4 min-w-48 h-full shadow-md shadow-gray-300 dark:shadow-white' : ''}`}
       ref={setNodeRef}
     >
       <SortableContext
@@ -23,8 +23,8 @@ export default function RenderWords ({items, id, strategy = verticalListSortingS
         items={items}
         strategy={strategy}
       >
-        {items.map((itemId) => (
-          <SortableItem key={itemId} id={itemId} withBadge={withBadge} />
+        {items.map((itemId, index) => (
+          <SortableItem key={itemId} id={itemId} withBadge={withBadge} index={index} />
         ))}
       </SortableContext>
     </div>

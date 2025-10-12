@@ -3,9 +3,19 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { STORIES } from "../utils/constants/stories";
 import Input from "./input";
-import { Button } from "@headlessui/react";
+import {
+  Button,
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+} from "@headlessui/react";
 import { useEffect, useState } from "react";
-import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
+import {
+  CheckCircleIcon,
+  ClipboardIcon,
+  DocumentDuplicateIcon,
+  XCircleIcon,
+} from "@heroicons/react/24/outline";
 import ConfettiExplosion from "react-confetti-explosion";
 
 type AnswerState = {
@@ -21,7 +31,6 @@ export default function ReadingComprenhensiveActivity() {
   const [isExploding, setIsExploding] = useState(false);
   const [randomNumber, setRandomNumber] = useState(0.5);
   const router = useRouter();
-
 
   if (!story) {
     return <div>Leyenda no encontrada</div>;
@@ -44,9 +53,12 @@ export default function ReadingComprenhensiveActivity() {
     });
   };
 
-  const hasErrors = answersState.some((answer) => !answer.isCorrect);
+  const hasErrors = answersState.some((answer) => !answer?.isCorrect);
 
-  const hasAllAnswers = answersState.every((answer) => Boolean(answer.value)) && answersState.length >= answers.length;
+  const hasAllAnswers =
+    answersState.every((answer) => Boolean(answer?.value)) &&
+    answersState.every((answer) => answer?.isCorrect) &&
+    answersState.filter((answer) => answer?.isCorrect).length === answers.length;
 
   useEffect(() => {
     if (!hasErrors && hasAllAnswers) {
@@ -61,7 +73,7 @@ export default function ReadingComprenhensiveActivity() {
   }, []);
 
   const randomAnswers = answers.toSorted(() => randomNumber - 0.5);
-  
+
   const handleGoBack = () => {
     router.push(`/story/${storyId}`);
   };
@@ -76,6 +88,17 @@ export default function ReadingComprenhensiveActivity() {
           height={900}
         />
       )}
+      {/* Information Banner */}
+      <div className="m-5">
+        <div
+          className="bg-blue-100 border-l-4 border-blue-500 text-blue-700 px-4 py-3 rounded"
+          role="status"
+        >
+          <span className="font-semibold">Nota:</span> Usa la lista de
+          respuestas en el contenedor de la derecha para completar las
+          respuestas en el contenedor de la izquierda.
+        </div>
+      </div>
       <h1 className="text-2xl font-bold">Comprensión Lectora</h1>
       <div className="flex flex-col md:flex-row gap-20 justify-center w-full items-center p-4">
         <div className="flex flex-col gap-4">
@@ -101,11 +124,26 @@ export default function ReadingComprenhensiveActivity() {
         </div>
         <div className="flex flex-col gap-2 justify-center border-2 border-gray-300 dark:border-white rounded-md p-4">
           <ol className="list-decimal list-inside">
-            {randomAnswers
-              .map((answer) => (
-                <li key={answer} className="">
-                  <span>{answer}</span>
-                </li>
+            {randomAnswers.map((answer) => (
+              <li key={answer} className="text-md flex flex-row items-center">
+                <span>{answer}</span>
+                <Popover className="flex flex-row items-center">
+                  <PopoverButton>
+                    <DocumentDuplicateIcon
+                      className="w-4 h-4 text-gray-500 ml-2 cursor-pointer"
+                      onClick={() => {
+                        navigator.clipboard.writeText(answer);
+                      }}
+                    />
+                  </PopoverButton>
+                  <PopoverPanel>
+                    <div className="flex flex-row items-center gap-2">
+                      <CheckCircleIcon className="w-4 h-4 text-green-500 ml-2" />
+                      <span className="text-sm">Copiado</span>
+                    </div>
+                  </PopoverPanel>
+                </Popover>
+              </li>
             ))}
           </ol>
         </div>

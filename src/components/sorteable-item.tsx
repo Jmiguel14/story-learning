@@ -5,10 +5,9 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
 import { Item } from "./item";
-import { useDroppable } from "@dnd-kit/core";
 import { Badge } from "./badge";
 
-export function SortableItem(props: { id: string; withBadge?: boolean }) {
+export function SortableItem(props: { id: string; withBadge?: boolean; index?: number }) {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: props.id });
 
@@ -18,9 +17,14 @@ export function SortableItem(props: { id: string; withBadge?: boolean }) {
   };
 
   return (
-    <div ref={setNodeRef} {...attributes} {...listeners}>
+    <div
+      ref={setNodeRef}
+      {...attributes}
+      {...listeners}
+      className="hover:animate-bounce"
+    >
       {props.withBadge ? (
-        <Badge >
+        <Badge>
           <Item
             style={style}
             id={props.id}
