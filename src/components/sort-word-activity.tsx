@@ -64,23 +64,26 @@ export default function SortWordActivity() {
       collisionDetection={closestCenter}
       onDragOver={handleDragOver}
     >
-      <div className="my-7 mx-7">
+      <div className="my-7 mx-7 mb-3">
         <RenderWords
           items={initialWords}
           id="top-side"
           strategy={horizontalListSortingStrategy}
           orientation="horizontal"
+          withBadge
         />
       </div>
       <div className="flex justify-center gap-7">
-        <RenderWords items={leftSide} id="left-side" />
-        <RenderWords items={rightSide} id="right-side" />
+        <RenderWords items={leftSide} id="left-side" withBorder withBadge />
+        <RenderWords items={rightSide} id="right-side" withBorder withBadge />
       </div>
     </DndContext>
   );
 
   function handleDragOver(event: DragEndEvent) {
     const { active, over } = event;
+
+    console.log({ active, over });
 
     const activeContainerId = active?.data.current?.sortable?.containerId;
     const overContainerId = over?.data.current?.sortable?.containerId;
@@ -91,6 +94,24 @@ export default function SortWordActivity() {
     if (id !== overId) {
       const activeIndex = active?.data.current?.sortable?.index;
       const overIndex = over?.data.current?.sortable?.index;
+
+      if (activeContainerId === "top-side" && overContainerId === "left-side") {
+        setWrongWords((words) => words.toSpliced(overIndex, 0, id));
+        setInitialWords((words) => words.toSpliced(activeIndex, 1));
+        return;
+      } else if (activeContainerId === "top-side" && overContainerId === "right-side") {
+        setRightWords((words) => words.toSpliced(overIndex, 0, id));
+        setInitialWords((words) => words.toSpliced(activeIndex, 1));
+        return;
+      } else if (activeContainerId === "left-side" && overContainerId === "top-side") {
+        setInitialWords((words) => words.toSpliced(overIndex, 0, id));
+        setWrongWords((words) => words.toSpliced(activeIndex, 1));
+        return;
+      } else if (activeContainerId === "right-side" && overContainerId === "top-side") {
+        setInitialWords((words) => words.toSpliced(overIndex, 0, id));
+        setRightWords((words) => words.toSpliced(activeIndex, 1));
+        return;
+      }
 
       if (
         activeContainerId === "left-side" &&
@@ -125,12 +146,20 @@ export default function SortWordActivity() {
         return;
       }
 
+
+      // handle empty containers
       if (activeContainerId === "left-side" && overId === "right-side") {
         setWrongWords((words) => words.toSpliced(activeIndex, 1));
         setRightWords((words) => words.toSpliced(overIndex, 0, id));
       } else if (activeContainerId === "right-side" && overId === "left-side") {
         setRightWords((words) => words.toSpliced(activeIndex, 1));
         setWrongWords((words) => words.toSpliced(overIndex, 0, id));
+      } else if (activeContainerId === "left-side" && overId === "top-side") {
+        setInitialWords((words) => words.toSpliced(overIndex, 0, id));
+        setWrongWords((words) => words.toSpliced(activeIndex, 1));
+      } else if (activeContainerId === "right-side" && overId === "top-side") {
+        setInitialWords((words) => words.toSpliced(overIndex, 0, id));
+        setRightWords((words) => words.toSpliced(activeIndex, 1));
       }
     }
   }

@@ -233,6 +233,34 @@ export const STORIES = [
       ["dolor", "pena"],
       ["Arrepentida", "remordida"],
       ["buscándolos", "tratando de hallarlos"],
+    ],
+    withReadingComprehensionActivity: true,
+    questionsAndAnswers: [
+      {
+        id: 1,
+        question: "¿Por qué la mujer vaga eternamente?",
+        answer: "Arrepentida, vaga eternamente buscándolos.",
+      },
+      {
+        id: 2,
+        question: "¿Qué expresa el grito “¡Ay, mis hijos!”?",
+        answer: "El lamento desgarrador.",
+      },
+      {
+        id: 3,
+        question: "¿Qué causa escuchar su lamento?",
+        answer: "Presagio de muerte o desgracia.",
+      },
+      {
+        id: 4,
+        question: "¿Qué arrastra la mujer?",
+        answer: "Cadenas y lágrimas.",
+      },
+      {
+        id: 5,
+        question: "¿Por qué pocos caminan solos de noche?",
+        answer: "Porque su lamento es un presagio de desgracia.",
+      },
     ]
   },
   {
@@ -255,6 +283,34 @@ export const STORIES = [
       ["borrachos", "ebrios"],
       ["pecado", "falta"],
       ["temida", "temible"],
+    ],
+    withReadingComprehensionActivity: true,
+    questionsAndAnswers: [
+      {
+        id: 1,
+        question: "¿Qué significa cuando el silbido se escucha lejos?",
+        answer: " Está junto a ti.",
+      },
+      {
+        id: 2,
+        question: "¿Por qué El Silbón fue condenado?",
+        answer: "Por matar a su padre.",
+      },
+      {
+        id: 3,
+        question: "¿Qué lleva en la espalda?",
+        answer: "Un saco.",
+      },
+      {
+        id: 4,
+        question: "¿A quiénes persigue El Silbón?",
+        answer: "A los hombres borrachos y mujeriegos.",
+      },
+      {
+        id: 5,
+        question: "¿Qué causa escuchar su silbido?",
+        answer: "Correr despavorido.",
+      },
     ]
   },
   {
@@ -279,6 +335,34 @@ export const STORIES = [
       ["juguetón", "bromista"],
       ["travieso", "pícaro"],
       ["encanto", "hechizo"],
+    ],
+    withReadingComprehensionActivity: true,
+    questionsAndAnswers: [
+      {
+        id: 1,
+        question: "¿Cómo es físicamente el Sombrerón?",
+        answer: "Pequeño, vestido de negro y con un sombrero enorme.",
+      },
+      {
+        id: 2,
+        question: "¿A quiénes enamora el Sombrerón?",
+        answer: "A las muchachas de cabello largo.",
+      },
+      {
+        id: 3,
+        question: "¿Qué hace mientras las enamora?",
+        answer: "Les canta con su guitarra y les trenza el pelo.",
+      },
+      {
+        id: 4,
+        question: "¿Qué les sucede a las jóvenes embrujadas?",
+        answer: "No pueden dormir ni comer.",
+      },
+      {
+        id: 5,
+        question: "¿Cómo pueden librarse del Sombrerón?",
+        answer: "Cortándoles el cabello o bendiciendo la casa.",
+      },
     ]
   },
   {
@@ -295,6 +379,34 @@ export const STORIES = [
       ["sofocante", "abrasador"],
       ["rezar", "orar"],
       ["espantarla", "ahuyentarla"],
+    ],
+    withReadingComprehensionActivity: true,
+    questionsAndAnswers: [
+      {
+        id: 1,
+        question: "¿Dónde aparece la Luz Mala?",
+        answer: "En los campos durante la noche.",
+      },
+      {
+        id: 2,
+        question: "¿Cómo se mueve la Luz Mala?",
+        answer: "Como si alguien invisible caminara con una lámpara.",
+      },
+      {
+        id: 3,
+        question: "¿Qué creen algunos que es la Luz Mala?",
+        answer: "Las almas en pena de los muertos sin descanso.",
+      },
+      {
+        id: 4,
+        question: "¿Qué puede pasar si alguien se acerca demasiado?",
+        answer: "Puede perder la vida.",
+      },
+      {
+        id: 5,
+        question: "¿Qué recomiendan los gauchos hacer?",
+        answer: "Rezar o morder un cuchillo.",
+      },
     ]
   },
   {
@@ -311,6 +423,34 @@ export const STORIES = [
       ["embalsamado", "momificado"],
       ["protege", "ampara"],
       ["mirada", "vista"],
+    ],
+    withReadingComprehensionActivity: true,
+    questionsAndAnswers: [
+      {
+        id: 1,
+        question: "¿Dónde se encuentra La Pascualita?",
+        answer: "En una tienda de vestidos de novia en Chihuahua.",
+      },
+      {
+        id: 2,
+        question: "¿Qué se rumora sobre La Pascualita?",
+        answer: "Que es el cuerpo embalsamado de la hija de la dueña.",
+      },
+      {
+        id: 3,
+        question: "¿Qué dicen los clientes sobre su piel?",
+        answer: "Que parece real.",
+      },
+      {
+        id: 4,
+        question: "¿Qué aseguran las empleadas haber visto?",
+        answer: "Que se mueve por las noches.",
+      },
+      {
+        id: 5,
+        question: "¿Qué creen algunos que hace La Pascualita?",
+        answer: " Protege a las novias.",
+      },
     ]
   },
   {
@@ -329,6 +469,34 @@ export const STORIES = [
       ["borrachos", "ebrios"],
       ["dualidad", "contraste"],
       ["oscuridad", "tinieblas"],
+    ],
+    withReadingComprehensionActivity: true,
+    questionsAndAnswers: [
+      {
+        id: 1,
+        question: "¿Dónde aparece el Cadejo?",
+        answer: "En los caminos nocturnos.",
+      },
+      {
+        id: 2,
+        question: "¿Cuántos Cadejos existen?",
+        answer: "Dos.",
+      },
+      {
+        id: 3,
+        question: "¿Cómo es el Cadejo blanco?",
+        answer: "Protector de los viajeros.",
+      },
+      {
+        id: 4,
+        question: "¿Qué siente quien se encuentra con el Cadejo negro?",
+        answer: "Frío intenso y olor a azufre.",
+      },
+      {
+        id: 5,
+        question: "¿Qué simboliza el Cadejo?",
+        answer: "El bien y el mal.",
+      },
     ]
   },
   {
@@ -351,6 +519,34 @@ export const STORIES = [
       ["traicionada", "engañada"],
       ["advertencia", "aviso"],
       ["oscuridad", "tinieblas"],
+    ],
+    withReadingComprehensionActivity: true,
+    questionsAndAnswers: [
+      {
+        id: 1,
+        question: "¿Cómo es la Sayona?",
+        answer: "Hermosa, vestida de blanco y con largos cabellos.",
+      },
+      {
+        id: 2,
+        question: "¿A quiénes busca la Sayona?",
+        answer: "A los hombres mujeriegos.",
+      },
+      {
+        id: 3,
+        question: "¿Cómo castiga a los infieles?",
+        answer: "Les arranca el alma con un grito aterrador.",
+      },
+      {
+        id: 4,
+        question: "¿Qué revela cuando sonríe?",
+        answer: "Una calavera con colmillos afilados.",
+      },
+      {
+        id: 5,
+        question: "¿Por qué busca venganza?",
+        answer: " Porque fue una mujer traicionada.",
+      },
     ]
   },
   {
@@ -369,6 +565,34 @@ export const STORIES = [
       ["belleza", "encanto"],
       ["protectora", "guardiana"],
       ["bosque", "selva"],
+    ],
+    withReadingComprehensionActivity: true,
+    questionsAndAnswers: [
+      {
+        id: 1,
+        question: "¿Dónde aparece la Patasola?",
+        answer: "En las selvas de Colombia.",
+      },
+      {
+        id: 2,
+        question: "¿Cómo se muestra al principio?",
+        answer: "Como una mujer hermosa que pide ayuda.",
+      },
+      {
+        id: 3,
+        question: "¿Qué hace cuando está sola con su víctima?",
+        answer: "Se transforma y los ataca.",
+      },
+      {
+        id: 4,
+        question: "¿Cómo se ve cuando se transforma?",
+        answer: "Con una sola pierna y cuerpo en llamas.",
+      },
+      {
+        id: 5,
+        question: "¿Qué simboliza la Patasola?",
+        answer: "La selva protectora de los animales.",
+      },
     ]
   },
   {
@@ -387,6 +611,34 @@ export const STORIES = [
       ["saltar", "brincar"],
       ["temido", "atemorizante"],
       ["sin resolver", "no resuelto"],
+    ],
+    withReadingComprehensionActivity: true,
+    questionsAndAnswers: [
+      {
+        id: 1,
+        question: "¿Qué animales ataca el Chupacabras?",
+        answer: "A los animales de corral.",
+      },
+      {
+        id: 2,
+        question: "¿Qué les sucede a sus víctimas?",
+        answer: "Quedan sin una gota de sangre.",
+      },
+      {
+        id: 3,
+        question: "¿Cómo lo describen algunos?",
+        answer: "Como un reptil pequeño con espinas en la espalda.",
+      },
+      {
+        id: 4,
+        question: "¿Qué dicen los campesinos que hace de noche?",
+        answer: "Salta sobre los techos.",
+      },
+      {
+        id: 5,
+        question: "¿Cómo es considerado el Chupacabras?",
+        answer: "Misterioso y temido.",
+      },
     ]
   },
   {
@@ -405,6 +657,34 @@ export const STORIES = [
       ["seduciendo", "cautivando"],
       ["imprudentes", "temerarios"],
       ["hechizo", "encanto"],
+    ],
+    withReadingComprehensionActivity: true,
+    questionsAndAnswers: [
+      {
+        id: 1,
+        question: "¿Dónde vive la Ciguapa?",
+        answer: "En los montes dominicanos.",
+      },
+      {
+        id: 2,
+        question: "¿Cómo son sus pies?",
+        answer: "Al revés.",
+      },
+      {
+        id: 3,
+        question: "¿Cuándo aparece?",
+        answer: "En las noches de luna.",
+      },
+      {
+        id: 4,
+        question: "¿Qué hace con los hombres?",
+        answer: "Los seduce y los lleva al bosque.",
+      },
+      {
+        id: 5,
+        question: "¿Qué pasa si alguien la mira a los ojos?",
+        answer: "Queda atrapado en su hechizo.",
+      },
     ]
   },
 ]

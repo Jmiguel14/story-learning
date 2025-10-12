@@ -39,18 +39,31 @@ export default function StoryPage() {
       <p className="max-w-2xl text-lg text-center text-gray-700 dark:text-gray-200">
         {currentStory.description}
       </p>
-      <div className="flex flex-col items-center my-6">
-        <h1 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-4 self-start">
+      <div className="flex flex-col items-center my-6 justify-center text-center">
+        <h1 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-4">
           Actividades
         </h1>
-        <Link href={`/activity/autocomplete?storyId=${id}`}>
-          <Button
-            type="button"
-            className="cursor-pointer w-full mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors"
-          >
-            Autocompletar
-          </Button>
-        </Link>
+        <div className="flex flex-row justify-between gap-4 items-center">
+          {currentStory.withReadingComprehensionActivity ? (
+            <Link href={`/activity/reading-comprenhensive?storyId=${id}`}>
+              <Button
+                type="button"
+                className="cursor-pointer w-full mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors"
+              >
+                Comprensión lectora
+              </Button>
+            </Link>
+          ) : (
+            <Link href={`/activity/autocomplete?storyId=${id}`}>
+              <Button
+                type="button"
+                className="cursor-pointer w-full mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors"
+              >
+                Autocompletar
+              </Button>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

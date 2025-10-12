@@ -7,7 +7,7 @@ import ConfettiExplosion from "react-confetti-explosion";
 import Input from "./input";
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import { Button } from "@headlessui/react";
-import Badge from "./badge";
+import { Badge } from "./badge";
 
 const getInitialResult = (wordsLength: number) => {
   return Array.from({ length: wordsLength }, () => ({
@@ -128,7 +128,7 @@ export default function AutocompleteActivity() {
         className="cursor-pointer w-full mt-4 px-4 py-2 bg-transparent text-gray-500 rounded hover:text-gray-700 border border-gray-500 transition-colors"
         onClick={handleGoBack}
       >
-        Regresar al cuento
+        Regresar a la leyenda
       </Button>
     </div>
   );

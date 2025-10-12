@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aprendiendo con cuentos",
-  description: "Esta aplicación te ayudará a aprender español con cuentos.",
+  title: "Aprendiendo con leyendas",
+  description: "Esta aplicación te ayudará a aprender español con leyendas.",
 };
 
 export default function RootLayout({

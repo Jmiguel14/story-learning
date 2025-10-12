@@ -7,13 +7,15 @@ type RenderWordsProps = {
   id: string;
   strategy?: SortingStrategy;
   orientation?: "vertical" | "horizontal";
+  withBadge?: boolean;
+  withBorder?: boolean;
 };
 
-export default function RenderWords ({items, id, strategy = verticalListSortingStrategy, orientation = "vertical"}: RenderWordsProps) {
+export default function RenderWords ({items, id, strategy = verticalListSortingStrategy, orientation = "vertical", withBadge = false, withBorder = false}: RenderWordsProps) {
   const { setNodeRef } = useDroppable({ id });
   return (
     <div
-      className={`flex justify-center ${orientation === "vertical" ? 'flex-col' : 'flex-row'} gap-4 border-2 border-gray-300 dark:border-white rounded-md p-4 min-w-48`}
+      className={`flex justify-center ${orientation === "vertical" ? 'flex-col' : 'flex-row'} gap-4 ${withBorder ? 'border-2 border-gray-300 dark:border-white rounded-md p-4 min-w-48 min-h-12' : ''}`}
       ref={setNodeRef}
     >
       <SortableContext
@@ -22,7 +24,7 @@ export default function RenderWords ({items, id, strategy = verticalListSortingS
         strategy={strategy}
       >
         {items.map((itemId) => (
-          <SortableItem key={itemId} id={itemId} />
+          <SortableItem key={itemId} id={itemId} withBadge={withBadge} />
         ))}
       </SortableContext>
     </div>
