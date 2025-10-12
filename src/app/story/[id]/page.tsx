@@ -36,14 +36,14 @@ export default function StoryPage() {
           <ArrowLeftIcon className="size-4" />
         </Button>
       </Link>
-      <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">
+      <h1 className="text-3xl font-bold text-center text-white mb-4">
         {currentStory.title}
       </h1>
-      <p className="max-w-2xl text-lg text-center text-gray-700 dark:text-gray-200">
+      <p className="max-w-2xl text-lg text-center text-white">
         {currentStory.description}
       </p>
       <div className="flex flex-col items-center my-6 justify-center text-center">
-        <h1 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-4">
+        <h1 className="text-2xl font-bold text-center text-white mb-4">
           Actividades
         </h1>
         <div className="flex flex-row justify-between gap-4 items-center">

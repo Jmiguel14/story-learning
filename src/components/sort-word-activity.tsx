@@ -241,7 +241,7 @@ export default function SortWordActivity() {
         onDragEnd={handleDragEnd}
         onDragOver={handleDragOver}
       >
-        <div className="my-7 mx-7 mb-3">
+        <div className="my-7 mx-7 mb-3 max-w-full">
           <RenderWords
             items={initialWords}
             id="top-side"
