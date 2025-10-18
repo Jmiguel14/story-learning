@@ -25,15 +25,18 @@ export default function RenderWords({
 }: RenderWordsProps) {
   const { setNodeRef } = useDroppable({ id });
 
+  const windowWidth = window.innerWidth;
+  const isMobile = windowWidth < 768;
+
   // Add scroll classes if it's horizontal
   const orientationClass =
     orientation === "vertical"
       ? "flex-col"
-      : "flex-row overflow-x-auto max-w-full scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200";
+      : "flex-row overflow-x-auto max-w-full scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 overflow-y-hidden";
 
   return (
     <div
-      className={`flex justify-center ${orientationClass} gap-4 ${
+      className={`flex justify-center ${isMobile ? orientationClass : ''} gap-4 ${
         withBorder
           ? "border-2 border-gray-300 dark:border-white rounded-4xl p-4 min-w-32 md:min-w-48 h-full shadow-md shadow-gray-300 dark:shadow-white"
           : ""

@@ -21,7 +21,6 @@ export function SortableItem(props: { id: string; withBadge?: boolean; index?: n
       ref={setNodeRef}
       {...attributes}
       {...listeners}
-      className="hover:animate-bounce"
     >
       {props.withBadge ? (
         <Badge>

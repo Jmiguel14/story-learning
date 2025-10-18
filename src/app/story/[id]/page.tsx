@@ -25,10 +25,10 @@ export default function StoryPage() {
 
   return (
     <div
-      className="flex flex-col items-center justify-center h-screen px-4 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${currentStory.image})` }}
+      className="h-screen bg-cover bg-center bg-no-repeat flex justify-center flex-wrap"
     >
-      <Link href="/" className="self-start">
+      <Link href="/" className="self-start items-start">
         <Button
           type="button"
           className="cursor-pointer my-4 px-4 py-2 bg-transparent text-white rounded hover:text-gray-500 border border-white transition-colors hover:animate-pulse"
@@ -36,44 +36,46 @@ export default function StoryPage() {
           <ArrowLeftIcon className="size-4" />
         </Button>
       </Link>
-      <h1 className="text-3xl font-bold text-center text-white mb-4">
-        {currentStory.title}
-      </h1>
-      <p className="max-w-2xl text-lg text-center text-white">
-        {currentStory.description}
-      </p>
-      <div className="flex flex-col items-center my-6 justify-center text-center">
-        <h1 className="text-2xl font-bold text-center text-white mb-4">
-          Actividades
+      <div className="flex flex-col items-center justify-center px-4">
+        <h1 className="text-3xl font-bold text-center text-white mb-4">
+          {currentStory.title}
         </h1>
-        <div className="flex flex-row justify-between gap-4 items-center">
-          {currentStory.withReadingComprehensionActivity ? (
-            <Link href={`/activity/reading-comprenhensive?storyId=${id}`}>
+        <p className="max-w-2xl text-lg text-center text-white">
+          {currentStory.description}
+        </p>
+        <div className="flex flex-col items-center my-6 justify-center text-center">
+          <h1 className="text-2xl font-bold text-center text-white mb-4">
+            Actividades
+          </h1>
+          <div className="flex flex-row justify-between gap-4 items-center">
+            {currentStory.withReadingComprehensionActivity ? (
+              <Link href={`/activity/reading-comprenhensive?storyId=${id}`}>
+                <Button
+                  type="button"
+                  className="cursor-pointer w-full mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors"
+                >
+                  Comprensión lectora
+                </Button>
+              </Link>
+            ) : (
+              <Link href={`/activity/autocomplete?storyId=${id}`}>
+                <Button
+                  type="button"
+                  className="cursor-pointer w-full mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors"
+                >
+                  Autocompletar
+                </Button>
+              </Link>
+            )}
+            <Link href={`/activity/sort-word?storyId=${id}`}>
               <Button
                 type="button"
                 className="cursor-pointer w-full mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors"
               >
-                Comprensión lectora
+                Ordenar palabras
               </Button>
             </Link>
-          ) : (
-            <Link href={`/activity/autocomplete?storyId=${id}`}>
-              <Button
-                type="button"
-                className="cursor-pointer w-full mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors"
-              >
-                Autocompletar
-              </Button>
-            </Link>
-          )}
-          <Link href={`/activity/sort-word?storyId=${id}`}>
-            <Button
-              type="button"
-              className="cursor-pointer w-full mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-colors"
-            >
-              Ordenar palabras
-            </Button>
-          </Link>
+          </div>
         </div>
       </div>
     </div>
