@@ -19,7 +19,14 @@ export default function TeamPage() {
           <img src="/images/team/Sofia.jpeg" alt="Sofia Chica" className="w-52 h-52 object-cover rounded-full mb-4 self-center" />
           <h2 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Sofia Chica</h2>
           <p className="text-gray-600 dark:text-gray-400">
-            Estudiante... creativo y proactivo.
+            Estudiante... creativa y proactiva.
+          </p>
+        </div>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col">
+          <img src="/images/team/Yuneidy.jpeg" alt="Yuneidy Salcedo" className="w-52 h-52 object-cover rounded-full mb-4 self-center" />
+          <h2 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Yuneidy Salcedo</h2>
+          <p className="text-gray-600 dark:text-gray-400">
+            Estudiante... creativa y proactiva.
           </p>
         </div>
       </div>
